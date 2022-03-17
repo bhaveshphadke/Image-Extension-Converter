@@ -29,39 +29,43 @@ router.get('/tools/webptopng', (req, res) => {
 router.post('/webptopngupload', (req, res) => {
     try {
         // USING UPLOAD MIDDLEWARE
-     upload(req, res, err => {
-        // IF ANY ERROR OCCURES
-       if (err) {
-           return res.render('extensions/webptopng')
-       }
+        upload(req, res, err => {
+            // IF ANY ERROR OCCURES
+            if (err) {
+                return res.render('extensions/webptopng')
+            }
 
-       // PATH OF IMAGE - TO PASS IN WEBP
-       outputpath = 'uploads/webptopng/' + Date.now() + 'result.png'
-       
-       // TAKING INPUT PATH AND PASSING IN WEBP 
-       // ALSO PASSING PATH OR OUTPUT IMAGE
-       const result = webp.cwebp(req.file.path, outputpath, "-q 80");
+            // PATH OF IMAGE - TO PASS IN WEBP
+            outputpath = 'uploads/webptopng/' + Date.now() + 'result.png'
 
-       // SLICING IMAGE PATH TO DISPLAY USER
-       const imagename = outputpath.slice(18)
+            // TAKING INPUT PATH AND PASSING IN WEBP 
+            // ALSO PASSING PATH OR OUTPUT IMAGE
+            const result = webp.cwebp(req.file.path, outputpath, "-q 80");
 
-       // SENDING RESPONSE WHEN IMAGE IS READY
-       result.then((response) => {
-           res.render('extensions/download', { outputpath: outputpath, imagename:imagename })
-       });
+            // SLICING IMAGE PATH TO DISPLAY USER
+            const imagename = outputpath.slice(18)
 
-       
-   })
+            // SENDING RESPONSE WHEN IMAGE IS READY
+            result.then((response) => {
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+            });
+
+
+        })
     } catch (error) {
-        
+
         res.render('extensions/webptopng')
     }
 })
 
 router.get('/download', (req, res) => {
-    const path = req.query.downloadimage
-    console.log('fgssdfdasdasd');
-    res.download(path)
+    try {
+        const path = req.query.downloadimage
+        console.log('fgssdfdasdasd');
+        res.download(path)
+    } catch (error) {
+        res.render('extensions/download')
+    }
 })
 
 module.exports = router

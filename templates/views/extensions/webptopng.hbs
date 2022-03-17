@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/webptopng.css">
     <link rel="stylesheet" href="/navbar.css">
     <link rel="stylesheet" href="/footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -20,10 +22,21 @@
     <section class="webptopng-upload-form">
         <div class="webptopng-form-div">
             <h2 class="webptopng-heading">Convert Image From <b>.WEBP</b> To <b>.PNG</b></h2>
+            <div class="image-container">
+                <div class="from">
+                    <img src="/images/webp.PNG" alt="">
+                </div>
+                <div class="arrow">
+                    <img src="/images/rightarrow.PNG" alt="">
+                </div>
+                <div class="to">
+                    <img src="/images/png.PNG" alt="">
+                </div>
+            </div>
             <form action="/webptopngupload" method="POST" class="webptopng-form" enctype="multipart/form-data">
                 <div class="image-div">
                     <label for="image">Upload an image</label>
-                    <input type="file" name="image" id="image">
+                    <input type="file" name="image" id="image" required>
                 </div>
                 <div>
                     <label for="btn"></label>
