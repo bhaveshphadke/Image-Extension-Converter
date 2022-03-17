@@ -8,7 +8,7 @@ const router = express.Router()
 // DECLARING STORAGE VARIABLE TO STORE IMAGES ON THE SERVER
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/')
+        cb(null, 'uploads/all')
     },
     filename: function (req, file, cb) {
         //   const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -58,6 +58,48 @@ router.post('/webptopngupload', (req, res) => {
     }
 })
 
+
+// WEBP TO JPG
+router.get('/tools/webptojpg', (req, res) => {
+    res.render('extensions/webptojpg')
+})
+
+router.post('/webptojpgupload', (req, res) => {
+    try {
+           // USING UPLOAD MIDDLEWARE
+           upload(req, res, err => {
+            // IF ANY ERROR OCCURES
+            if (err) {
+                return res.render('extensions/webptopng')
+            }
+
+            // PATH OF IMAGE - TO PASS IN WEBP
+            outputpath = 'uploads/webptojpg/' + Date.now() + 'result.jpg'
+
+            // TAKING INPUT PATH AND PASSING IN WEBP 
+            // ALSO PASSING PATH OR OUTPUT IMAGE
+            const result = webp.cwebp(req.file.path, outputpath, "-q 80");
+
+            // SLICING IMAGE PATH TO DISPLAY USER
+            const imagename = outputpath.slice(18)
+
+            // SENDING RESPONSE WHEN IMAGE IS READY
+            result.then((response) => {
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+            });
+
+
+        })
+    } catch (error) {
+
+        res.render('extensions/webptopng')
+    }
+})
+
+
+
+
+// TO DOWNLOAD
 router.get('/download', (req, res) => {
     try {
         const path = req.query.downloadimage

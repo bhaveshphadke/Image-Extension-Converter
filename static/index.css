@@ -49,5 +49,8 @@
     .home-container .home-desc h3{
         text-align: center;
     }
+    .home-container .home-desc p{
+        text-align: center;
+    }
 
   }
