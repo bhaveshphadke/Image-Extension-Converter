@@ -92,7 +92,7 @@ router.post('/webptojpgupload', (req, res) => {
         })
     } catch (error) {
 
-        res.render('extensions/webptopng')
+        res.render('extensions/webptojpg')
     }
 })
 
