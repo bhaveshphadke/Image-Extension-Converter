@@ -2,6 +2,7 @@ const express = require('express');
 const async = require('hbs/lib/async');
 const multer = require('multer')
 const webp = require('webp-converter');
+const path = require('path')
 
 const router = express.Router()
 
@@ -27,6 +28,7 @@ router.get('/tools/webptopng', (req, res) => {
 })
 
 router.post('/webptopngupload', (req, res) => {
+    console.log('sdfsdhfjdshfjgsdhfgsdh');
     try {
         console.log("try");
         // USING UPLOAD MIDDLEWARE
@@ -41,7 +43,7 @@ router.post('/webptopngupload', (req, res) => {
 
             // TAKING INPUT PATH AND PASSING IN WEBP 
             // ALSO PASSING PATH OR OUTPUT IMAGE
-            const result = webp.dwebp(req.file.path, outputpath, "-o");
+            const result = webp.cwebp(req.file.path, outputpath, "-q 80");
 
             // SLICING IMAGE PATH TO DISPLAY USER
             const imagename = outputpath.slice(8)
@@ -104,10 +106,10 @@ router.post('/webptojpgupload', (req, res) => {
 // TO DOWNLOAD
 router.get('/download', (req, res) => {
     try {
-        const path = req.query.downloadimage
-        console.log(path);
+        const ipath = req.query.downloadimage
+        console.log(path.join(__dirname,ipath));
         console.log('fgssdfdasdasd');
-        res.download(path)
+        res.download(ipath)
     } catch (error) {
         res.render('extensions/download')
     }
