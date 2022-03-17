@@ -39,7 +39,7 @@ router.post('/webptopngupload', (req, res) => {
             }
 
             // PATH OF IMAGE - TO PASS IN WEBP
-            outputpath = 'uploads/' + Date.now() + 'result.png'
+            outputpath = '/uploads/' + Date.now() + 'result.png'
 
             // TAKING INPUT PATH AND PASSING IN WEBP 
             // ALSO PASSING PATH OR OUTPUT IMAGE
