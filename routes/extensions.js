@@ -28,6 +28,7 @@ router.get('/tools/webptopng', (req, res) => {
 
 router.post('/webptopngupload', (req, res) => {
     try {
+        console.log("try");
         // USING UPLOAD MIDDLEWARE
         upload(req, res, err => {
             // IF ANY ERROR OCCURES
@@ -53,6 +54,7 @@ router.post('/webptopngupload', (req, res) => {
 
         })
     } catch (error) {
+        console.log("try");
 
         res.render('extensions/webptopng')
     }
@@ -103,6 +105,7 @@ router.post('/webptojpgupload', (req, res) => {
 router.get('/download', (req, res) => {
     try {
         const path = req.query.downloadimage
+        console.log(path);
         console.log('fgssdfdasdasd');
         res.download(path)
     } catch (error) {
