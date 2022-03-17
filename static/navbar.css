@@ -1,0 +1,151 @@
+/* Navbar div  */
+.navbar-div{
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* .nav-heading{
+    width: 100%;
+} */
+
+
+
+
+h1{
+    font-family: 'Baloo 2', cursive;
+    margin-left: 5px;
+    /* width: max-content; */
+    width: 100%;
+    width: max-content;
+}
+
+/* Navbar urls div  */
+.main-urls{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Baloo 2', cursive;
+}
+
+
+.main-urls li{
+    list-style: none;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    width: max-content;
+}
+
+.main-urls li a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.main-urls input{
+    margin: 0 10px;
+    padding: 5px;
+    width: 200px;
+    font-size: 1.2rem;
+    font-family: 'Baloo 2', cursive;
+}
+.main-urls .btn{
+    margin: 0 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    border: 0.1 px solid black;
+    padding: 5px;
+    font-family: 'Baloo 2', cursive;
+    cursor: pointer;
+}
+.main-urls .btn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+/* Navbar Login And Sign Up buttons  */
+.search-div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    margin-right: 20px;
+}
+.search-div a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+.search-div a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.search-div .btn{
+    margin: 0 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 0.1 px solid black;
+    padding: 5px;
+    font-family: 'Baloo 2', cursive;
+}
+.search-div .btn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+@media only screen and (max-width: 1100px) {
+
+    .navbar-div{flex-direction: column;
+    }
+
+    .main-urls{
+        flex-direction: column;
+        display: none;
+    }
+    
+    
+.main-urls li{
+    margin: 2px;
+    padding: 2px;
+}
+
+    .main-urls .btn{
+        margin-top: 10px;
+    }
+
+    .search-div{
+        margin-top: 10px;
+        justify-content: center;
+        display: none;
+    }
+    .ham{
+        display: block;
+        border: 1px solid black;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+    .ham div{
+        width: 25px;
+        border: 1px solid black;
+        margin: 5px;
+    }
+    
+    h1{
+        margin: 20px;
+        text-align: center;
+    }
+
+  }

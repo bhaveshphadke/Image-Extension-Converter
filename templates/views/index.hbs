@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+
+    <section class="Home">
+        <div class="main-heading">
+            <h2>Welcome to Image Converter</h2>
+        </div>
+
+        <div class="home-container">
+            <div class="image-container">
+                <img src="images/homeimage.png" class="img" alt="">
+            </div>
+            <div class="home-desc">
+                <h3>Hi, You can convert your images extension Here.</h3>
+                <p>Start uploading images and convert images</p>
+                <p>Click on Tools explore more....</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+const express = require('express');
+const async = require('hbs/lib/async');
+const multer = require('multer')
+const webp = require('webp-converter');
+
+const router = express.Router()
+
+// DECLARING STORAGE VARIABLE TO STORE IMAGES ON THE SERVER
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+        //   const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, Date.now() + file.fieldname + '-' + file.originalname)
+    }
+})
+
+// CREATING UPLOAD MIDDLEWARE
+const upload = multer({ storage: storage }).single('image')
+
+
+
+// WEBP TO PNG
+router.get('/tools/webptopng', (req, res) => {
+    res.render('extensions/webptopng')
+})
+
+router.post('/webptopngupload', (req, res) => {
+    try {
+        // USING UPLOAD MIDDLEWARE
+     upload(req, res, err => {
+        // IF ANY ERROR OCCURES
+       if (err) {
+           return res.render('extensions/webptopng')
+       }
+
+       // PATH OF IMAGE - TO PASS IN WEBP
+       outputpath = 'uploads/webptopng/' + Date.now() + 'result.png'
+       
+       // TAKING INPUT PATH AND PASSING IN WEBP 
+       // ALSO PASSING PATH OR OUTPUT IMAGE
+       const result = webp.cwebp(req.file.path, outputpath, "-q 80");
+
+       // SLICING IMAGE PATH TO DISPLAY USER
+       const imagename = outputpath.slice(18)
+
+       // SENDING RESPONSE WHEN IMAGE IS READY
+       result.then((response) => {
+           res.render('extensions/download', { outputpath: outputpath, imagename:imagename })
+       });
+
+       
+   })
+    } catch (error) {
+        
+        res.render('extensions/webptopng')
+    }
+})
+
+router.get('/download', (req, res) => {
+    const path = req.query.downloadimage
+    console.log('fgssdfdasdasd');
+    res.download(path)
+})
+
+module.exports = router

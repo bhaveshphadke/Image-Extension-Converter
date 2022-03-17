@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=IBM+Plex+Serif:wght@500&family=Luxurious+Roman&family=Montserrat:wght@100;300&family=Open+Sans:wght@500&family=Rubik&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Extensions Converter */
+.extension-heading{
+    text-align: center;
+    margin-top: 20px;
+    color: #00A5FE;
+}
+.extension-tools .extensions-div{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    margin: 20px 0;
+}
+
+.extension-tools .extensions-div .each-tool{
+    padding: 20px;
+    border: 0.5px solid black;
+}
+.extension-tools .extensions-div .each-tool a{
+    text-decoration: none;
+    color: #335551;
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    .extension-tools .extensions-div{
+        grid-template-columns: auto auto auto auto auto auto auto auto;
+    }
+  
+  }
+@media only screen and (max-width: 1000px) {
+    .extension-tools .extensions-div{
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+  
+  }
+@media only screen and (max-width: 750px) {
+    .extension-tools .extensions-div{
+        grid-template-columns: auto auto auto auto;
+    }
+  
+  }
+@media only screen and (max-width: 500px) {
+    .extension-tools .extensions-div{
+        grid-template-columns: auto auto auto;
+    }
+  
+  }
+@media only screen and (max-width: 360px) {
+    .extension-tools .extensions-div{
+        grid-template-columns: auto auto ;
+    }
+    
+    
+.extension-tools .extensions-div .each-tool{
+    /* margin: 5px; */
+    padding: 5px;
+}}
