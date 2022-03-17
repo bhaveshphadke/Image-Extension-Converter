@@ -37,11 +37,11 @@ router.post('/webptopngupload', (req, res) => {
             }
 
             // PATH OF IMAGE - TO PASS IN WEBP
-            outputpath = 'uploads/' + Date.now() + 'result.webp'
+            outputpath = 'uploads/' + Date.now() + 'result.png'
 
             // TAKING INPUT PATH AND PASSING IN WEBP 
             // ALSO PASSING PATH OR OUTPUT IMAGE
-            const result = webp.cwebp(req.file.path, outputpath, "-q 80");
+            const result = webp.dwebp(req.file.path, outputpath, "-o");
 
             // SLICING IMAGE PATH TO DISPLAY USER
             const imagename = outputpath.slice(8)
@@ -76,11 +76,11 @@ router.post('/webptojpgupload', (req, res) => {
             }
 
             // PATH OF IMAGE - TO PASS IN WEBP
-            outputpath = 'uploads/' + Date.now() + 'result.webp'
+            outputpath = 'uploads/' + Date.now() + 'result.png'
 
             // TAKING INPUT PATH AND PASSING IN WEBP 
             // ALSO PASSING PATH OR OUTPUT IMAGE
-            const result = webp.cwebp(req.file.path, outputpath, "-q 80");
+            const result = webp.dwebp(req.file.path, outputpath, "-o");
 
             // SLICING IMAGE PATH TO DISPLAY USER
             const imagename = outputpath.slice(8)
