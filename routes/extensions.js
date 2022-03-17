@@ -43,7 +43,7 @@ router.post('/webptopngupload', (req, res) => {
             const result = webp.cwebp(req.file.path, outputpath, "-q 80");
 
             // SLICING IMAGE PATH TO DISPLAY USER
-            const imagename = outputpath.slice(18)
+            const imagename = outputpath.slice(8)
 
             // SENDING RESPONSE WHEN IMAGE IS READY
             result.then((response) => {
@@ -81,7 +81,7 @@ router.post('/webptojpgupload', (req, res) => {
             const result = webp.cwebp(req.file.path, outputpath, "-q 80");
 
             // SLICING IMAGE PATH TO DISPLAY USER
-            const imagename = outputpath.slice(18)
+            const imagename = outputpath.slice(8)
 
             // SENDING RESPONSE WHEN IMAGE IS READY
             result.then((response) => {
