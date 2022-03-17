@@ -8,7 +8,7 @@ const router = express.Router()
 // DECLARING STORAGE VARIABLE TO STORE IMAGES ON THE SERVER
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/all')
+        cb(null, 'uploads')
     },
     filename: function (req, file, cb) {
         //   const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -36,7 +36,7 @@ router.post('/webptopngupload', (req, res) => {
             }
 
             // PATH OF IMAGE - TO PASS IN WEBP
-            outputpath = 'uploads/webptopng/' + Date.now() + 'result.png'
+            outputpath = 'uploads/' + Date.now() + 'result.png'
 
             // TAKING INPUT PATH AND PASSING IN WEBP 
             // ALSO PASSING PATH OR OUTPUT IMAGE
@@ -74,7 +74,7 @@ router.post('/webptojpgupload', (req, res) => {
             }
 
             // PATH OF IMAGE - TO PASS IN WEBP
-            outputpath = 'uploads/webptojpg/' + Date.now() + 'result.jpg'
+            outputpath = 'uploads/' + Date.now() + 'result.jpg'
 
             // TAKING INPUT PATH AND PASSING IN WEBP 
             // ALSO PASSING PATH OR OUTPUT IMAGE
