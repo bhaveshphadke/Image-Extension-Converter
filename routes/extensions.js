@@ -2,7 +2,8 @@ const express = require('express');
 const async = require('hbs/lib/async');
 const multer = require('multer')
 const webp = require('webp-converter');
-const path = require('path')
+const path = require('path');
+const { redirect } = require('express/lib/response');
 
 const router = express.Router()
 
@@ -27,37 +28,27 @@ router.get('/tools/webptopng', (req, res) => {
     res.render('extensions/webptopng')
 })
 
-router.post('/webptopngupload', (req, res) => {
-    console.log('sdfsdhfjdshfjgsdhfgsdh');
+router.post('/webptopngupload', async (req, res) => {
     try {
-        console.log("try");
         // USING UPLOAD MIDDLEWARE
-        upload(req, res, err => {
-            // IF ANY ERROR OCCURES
-            if (err) {
-                return res.render('extensions/webptopng')
-            }
+        upload(req, res, async (err) => {
 
-            // PATH OF IMAGE - TO PASS IN WEBP
+            if (err) { return res.render('extensions/webptopng') }
+
             outputpath = 'uploads/' + Date.now() + 'result.png'
+            const result = await webp.dwebp(req.file.path, outputpath, "-o");
+            console.log(result);
 
-            // TAKING INPUT PATH AND PASSING IN WEBP 
-            // ALSO PASSING PATH OR OUTPUT IMAGE
-            const result = webp.dwebp(req.file.path, outputpath, "-o");
-
-            // SLICING IMAGE PATH TO DISPLAY USER
             const imagename = outputpath.slice(8)
-
-            // SENDING RESPONSE WHEN IMAGE IS READY
-            result.then((response) => {
+            if (result === "") {
                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
-            });
-
+            }
+            else{
+                res.render('extensions/webptopng',{error:false})
+            }
 
         })
     } catch (error) {
-        console.log("try");
-
         res.render('extensions/webptopng')
     }
 })
@@ -70,32 +61,24 @@ router.get('/tools/webptojpg', (req, res) => {
 
 router.post('/webptojpgupload', (req, res) => {
     try {
-           // USING UPLOAD MIDDLEWARE
-           upload(req, res, err => {
-            // IF ANY ERROR OCCURES
-            if (err) {
-                return res.render('extensions/webptopng')
-            }
+        // USING UPLOAD MIDDLEWARE
+        upload(req, res, async(err) => {
 
-            // PATH OF IMAGE - TO PASS IN WEBP
+            if (err) { return res.render('extensions/webptopng') }
+
             outputpath = 'uploads/' + Date.now() + 'result.jpg'
 
-            // TAKING INPUT PATH AND PASSING IN WEBP 
-            // ALSO PASSING PATH OR OUTPUT IMAGE
-            const result = webp.dwebp(req.file.path, outputpath, "-o");
+            const result = await  webp.dwebp(req.file.path, outputpath, "-o");
 
-            // SLICING IMAGE PATH TO DISPLAY USER
             const imagename = outputpath.slice(8)
-
-            // SENDING RESPONSE WHEN IMAGE IS READY
-            result.then((response) => {
+            if (result === "") {
                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
-            });
-
-
+            }
+            else{
+                res.render('extensions/webptojpg',{error:false})
+            }
         })
     } catch (error) {
-
         res.render('extensions/webptojpg')
     }
 })
@@ -107,7 +90,7 @@ router.post('/webptojpgupload', (req, res) => {
 router.get('/download', (req, res) => {
     try {
         const ipath = req.query.downloadimage
-        console.log(path.join(__dirname,ipath));
+        console.log(path.join(__dirname, ipath));
         console.log('fgssdfdasdasd');
         res.download(ipath)
     } catch (error) {
