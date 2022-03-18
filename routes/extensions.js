@@ -44,6 +44,7 @@ router.post('/webptopngupload', async (req, res) => {
                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename})
             }
             else{
+                
                 res.render('extensions/webptopng',{error:true})
             }
 
@@ -80,6 +81,37 @@ router.post('/webptojpgupload', (req, res) => {
         })
     } catch (error) {
         res.render('extensions/webptojpg')
+    }
+})
+
+
+
+// WEBP TO JPEG
+router.get('/tools/webptojpeg', (req, res) => {
+    res.render('extensions/webptojpeg',{error:false})
+})
+
+router.post('/webptojpegupload', (req, res) => {
+    try {
+        // USING UPLOAD MIDDLEWARE
+        upload(req, res, async(err) => {
+
+            if (err) { return res.render('extensions/webptopng') }
+
+            outputpath = 'uploads/' + Date.now() + 'result.jpeg'
+
+            const result = await  webp.dwebp(req.file.path, outputpath, "-o");
+
+            const imagename = outputpath.slice(8)
+            if (result === "") {
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+            }
+            else{
+                res.render('extensions/webptojpeg',{error:true})
+            }
+        })
+    } catch (error) {
+        res.render('extensions/webptojpeg')
     }
 })
 
