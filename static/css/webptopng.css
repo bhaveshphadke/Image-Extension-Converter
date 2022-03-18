@@ -68,12 +68,6 @@
 }
 
 
-.error-in-file{
-    display: block;
-    color: red;
-    margin: -10px;
-}
-
 @media only screen and (max-width: 600px) {
 
     .image-div{

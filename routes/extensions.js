@@ -25,7 +25,7 @@ const upload = multer({ storage: storage }).single('image')
 
 // WEBP TO PNG
 router.get('/tools/webptopng', (req, res) => {
-    res.render('extensions/webptopng')
+    res.render('extensions/webptopng',{error:false})
 })
 
 router.post('/webptopngupload', async (req, res) => {
@@ -41,10 +41,10 @@ router.post('/webptopngupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename})
             }
             else{
-                res.render('extensions/webptopng',{error:false})
+                res.render('extensions/webptopng',{error:true})
             }
 
         })
@@ -56,7 +56,7 @@ router.post('/webptopngupload', async (req, res) => {
 
 // WEBP TO JPG
 router.get('/tools/webptojpg', (req, res) => {
-    res.render('extensions/webptojpg')
+    res.render('extensions/webptojpg',{error:false})
 })
 
 router.post('/webptojpgupload', (req, res) => {
@@ -75,7 +75,7 @@ router.post('/webptojpgupload', (req, res) => {
                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
             }
             else{
-                res.render('extensions/webptojpg',{error:false})
+                res.render('extensions/webptojpg',{error:true})
             }
         })
     } catch (error) {

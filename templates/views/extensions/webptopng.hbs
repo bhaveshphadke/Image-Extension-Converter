@@ -38,11 +38,9 @@
                     <label for="image">Upload an image</label>
                     <input type="file" name="image" id="image" required>
                 </div>
-                <div class="image-div">
-                    
-                    {{!-- <p class="error-in-file">Please upload correct file. This file is not supported</p> --}}
-                </div>
+                {{>fileerror}}
                 <div>
+                    <label for="btn"></label>
                     <label for="btn"></label>
                     <button class='btn' id="btn">Convert</button>
                 </div>
