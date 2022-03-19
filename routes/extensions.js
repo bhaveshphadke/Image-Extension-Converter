@@ -439,9 +439,9 @@ router.post('/pngtojpegupload', async (req, res) => {
 
             if (err) { return res.render('extensions/pngtojpeg') }
 
-            outputpath = 'uploads/' + Date.now() + 'result.jpeg'
+            outputpath = 'uploads/' + Date.now() + 'result.jpg'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/pngtojpg')
+                if (err) return res.render('extensions/pngtojpeg')
                 let a = await image.write(outputpath)
                 
                 const imagename = outputpath.slice(8)
