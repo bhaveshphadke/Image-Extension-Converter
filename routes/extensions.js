@@ -297,7 +297,7 @@ router.post('/jpgtopngupload', async (req, res) => {
 
             outputpath = 'uploads/' + Date.now() + 'result.png'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/jpgtopng')
+                if (err) return res.render('extensions/jpgtopng', { error: true })
                 let a = await image.write(outputpath)
                 const imagename = outputpath.slice(8)
                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
@@ -322,7 +322,7 @@ router.post('/jpegtopngupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/jpegtopng') }
+            if (err) { return res.render('extensions/jpegtopng', { error: true }) }
 
             outputpath = 'uploads/' + Date.now() + 'result.png'
             jimp.read(req.file.path, async (err, image) => {
@@ -352,7 +352,7 @@ router.post('/jpegtojpgupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/jpegtojpg') }
+            if (err) { return res.render('extensions/jpegtojpg', { error: true }) }
 
             outputpath = 'uploads/' + Date.now() + 'result.jpg'
             jimp.read(req.file.path, async (err, image) => {
@@ -381,7 +381,7 @@ router.post('/jpgtojpegupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/jpgtojpeg') }
+            if (err) { return res.render('extensions/jpgtojpeg', { error: true } )}
 
             outputpath = 'uploads/' + Date.now() + 'result.jpeg'
             jimp.read(req.file.path, async (err, image) => {
@@ -409,7 +409,7 @@ router.post('/pngtojpgupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/pngtojpg') }
+            if (err) { return res.render('extensions/pngtojpg', { error: true } ) }
 
             outputpath = 'uploads/' + Date.now() + 'result.jpg'
             jimp.read(req.file.path, async (err, image) => {
@@ -437,11 +437,11 @@ router.post('/pngtojpegupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/pngtojpeg') }
+            if (err) { return res.render('extensions/pngtojpeg', { error: true } ) }
 
-            outputpath = 'uploads/' + Date.now() + 'result.jpg'
+            outputpath = 'uploads/' + Date.now() + 'result.jpeg'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/pngtojpeg')
+                if (err) return res.render('extensions/pngtojpg')
                 let a = await image.write(outputpath)
                 
                 const imagename = outputpath.slice(8)
