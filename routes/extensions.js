@@ -450,7 +450,7 @@ router.post('/pngtojpegupload', async (req, res) => {
 
         })
     } catch (error) {
-        res.render('extensions/pngtojpeg')
+        res.render('extensions/pngtojpg')
     }
 })
 
