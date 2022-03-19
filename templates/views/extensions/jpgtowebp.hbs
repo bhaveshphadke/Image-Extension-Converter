@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBP-TO-JPEG</title>
+    <title>JPG-TO-WEBP</title>
     <link rel="stylesheet" href="/css/imageextensions.css">
     <link rel="stylesheet" href="/navbar.css">
     <link rel="stylesheet" href="/footer.css">
@@ -21,22 +21,22 @@
     </section>
     <section class="webptopng-upload-form">
         <div class="webptopng-form-div">
-            <h2 class="webptopng-heading">Convert Image From <b>.WEBP</b> To <b>.JPEG</b></h2>
+            <h2 class="webptopng-heading">Convert Image From <b>.JPG</b> To <b>.WEBP</b></h2>
             <div class="image-container">
                 <div class="from">
-                    <img src="/images/webp.PNG" alt="">
+                    <img src="/images/jpg.PNG" alt="">
                 </div>
                 <div class="arrow">
                     <img src="/images/rightarrow.png" alt="">
                 </div>
                 <div class="to">
-                    <img src="/images/jpeg.PNG" alt="">
+                    <img src="/images/webp.PNG" alt="">
                 </div>
             </div>
-            <form action="/webptojpegupload" method="POST" class="webptopng-form" enctype="multipart/form-data">
+            <form action="/jpgtowebpupload" method="POST" class="webptopng-form" enctype="multipart/form-data">
                 <div class="image-div">
                     <label for="image">Upload an image</label>
-                    <input type="file" name="image" id="image" required>
+                    <input type="file" accept=".jpg" name="image" id="image" required>
                 </div>
                 {{>fileerror}}
                 <div>
