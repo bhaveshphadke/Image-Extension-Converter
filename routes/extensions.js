@@ -437,7 +437,7 @@ router.post('/pngtojpegupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/pngtojpg') }
+            if (err) { return res.render('extensions/pngtojpeg') }
 
             outputpath = 'uploads/' + Date.now() + 'result.jpeg'
             jimp.read(req.file.path, async (err, image) => {
