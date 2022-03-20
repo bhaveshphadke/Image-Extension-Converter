@@ -87,6 +87,7 @@ router.post('/webptojpgupload', (req, res) => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
                 }, 5000);
+                
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
