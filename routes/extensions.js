@@ -49,7 +49,7 @@ router.post('/webptopngupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
 
@@ -83,15 +83,12 @@ router.post('/webptojpgupload', (req, res) => {
             const imagename = outputpath.slice(8)
             if (result === "") {
                  res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
-                setTimeout(() => {
-                    fs.unlinkSync(req.file.path)
-                    fs.unlinkSync(outputpath)
-                }, 5000);
+              
                 
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
                 res.render('extensions/webptojpg', { error: true })
@@ -126,7 +123,7 @@ router.post('/webptojpegupload', (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
                 res.render('extensions/webptojpeg', { error: true })
@@ -160,7 +157,7 @@ router.post('/webptogifupload', (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
                 res.render('extensions/webptogif', { error: true })
@@ -195,7 +192,7 @@ router.post('/pngtowebpupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
 
@@ -231,7 +228,7 @@ router.post('/jpgtowebpupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
 
@@ -268,7 +265,7 @@ router.post('/jpegtowebpupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
 
@@ -305,7 +302,7 @@ router.post('/giftowebpupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             }
             else {
 
@@ -343,7 +340,7 @@ router.post('/jpgtopngupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             })
 
         })
@@ -376,7 +373,7 @@ router.post('/jpegtopngupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             })
 
         })
@@ -410,7 +407,7 @@ router.post('/jpegtojpgupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             })
 
         })
@@ -444,7 +441,7 @@ router.post('/jpgtojpegupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             })
 
         })
@@ -476,7 +473,7 @@ router.post('/pngtojpgupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             })
 
         })
@@ -508,7 +505,7 @@ router.post('/pngtojpegupload', async (req, res) => {
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
-                }, 5000);
+                }, 43200000);
             })
 
         })
