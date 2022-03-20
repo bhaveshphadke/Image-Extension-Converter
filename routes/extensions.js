@@ -6,7 +6,7 @@ const jimp = require('jimp');
 const path = require('path');
 const fs = require('fs')
 const { redirect } = require('express/lib/response');
-
+const process = require('process')
 const router = express.Router()
 
 // DECLARING STORAGE VARIABLE TO STORE IMAGES ON THE SERVER
@@ -82,6 +82,7 @@ router.post('/webptojpgupload', (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
+
                  res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
               
                 
