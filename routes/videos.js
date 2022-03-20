@@ -45,7 +45,10 @@ router.post('/mp4tomp3upload', upload.single('video'), (req, res, next) => {
                 const videoname = outputpath.slice(8)
 
                 res.render('videos/download', { outputpath: outputpath, videoname: videoname })
+                setTimeout(() => {
                 fs.unlinkSync(req.file.path)
+                fs.unlinkSync(outputpath)
+                }, 43200000);
 
             }
         })

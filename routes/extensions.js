@@ -4,6 +4,7 @@ const multer = require('multer')
 const webp = require('webp-converter');
 const jimp = require('jimp');
 const path = require('path');
+const fs = require('fs')
 const { redirect } = require('express/lib/response');
 
 const router = express.Router()
@@ -44,12 +45,17 @@ router.post('/webptopngupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
 
                 res.render('extensions/webptopng', { error: true })
             }
+            
 
         })
     } catch (error) {
@@ -76,7 +82,15 @@ router.post('/webptojpgupload', (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
                 res.render('extensions/webptojpg', { error: true })
@@ -107,7 +121,11 @@ router.post('/webptojpegupload', (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
                 res.render('extensions/webptojpeg', { error: true })
@@ -137,7 +155,11 @@ router.post('/webptogifupload', (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
                 res.render('extensions/webptogif', { error: true })
@@ -168,7 +190,11 @@ router.post('/pngtowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
 
@@ -200,7 +226,11 @@ router.post('/jpgtowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
 
@@ -233,7 +263,11 @@ router.post('/jpegtowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
 
@@ -266,7 +300,11 @@ router.post('/giftowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             }
             else {
 
@@ -293,14 +331,18 @@ router.post('/jpgtopngupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/jpgtopng', { error: true } ) }
+            if (err) { return res.render('extensions/jpgtopng', { error: true }) }
 
             outputpath = 'uploads/' + Date.now() + 'result.png'
             jimp.read(req.file.path, async (err, image) => {
                 if (err) return res.render('extensions/jpgtopng', { error: true })
                 let a = await image.write(outputpath)
                 const imagename = outputpath.slice(8)
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             })
 
         })
@@ -326,10 +368,14 @@ router.post('/jpegtopngupload', async (req, res) => {
 
             outputpath = 'uploads/' + Date.now() + 'result.png'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/jpegtopng', { error: true } )
+                if (err) return res.render('extensions/jpegtopng', { error: true })
                 let a = await image.write(outputpath)
                 const imagename = outputpath.slice(8)
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             })
 
         })
@@ -356,10 +402,14 @@ router.post('/jpegtojpgupload', async (req, res) => {
 
             outputpath = 'uploads/' + Date.now() + 'result.jpg'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/jpegtojpg', { error: true } )
+                if (err) return res.render('extensions/jpegtojpg', { error: true })
                 let a = await image.write(outputpath)
                 const imagename = outputpath.slice(8)
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             })
 
         })
@@ -381,15 +431,19 @@ router.post('/jpgtojpegupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/jpgtojpeg', { error: true } )}
+            if (err) { return res.render('extensions/jpgtojpeg', { error: true }) }
 
             outputpath = 'uploads/' + Date.now() + 'result.jpeg'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/jpgtojpeg', { error: true } )
+                if (err) return res.render('extensions/jpgtojpeg', { error: true })
                 let a = await image.write(outputpath)
-                
+
                 const imagename = outputpath.slice(8)
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             })
 
         })
@@ -409,15 +463,19 @@ router.post('/pngtojpgupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/pngtojpg', { error: true } ) }
+            if (err) { return res.render('extensions/pngtojpg', { error: true }) }
 
             outputpath = 'uploads/' + Date.now() + 'result.jpg'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/pngtojpg', { error: true } )
+                if (err) return res.render('extensions/pngtojpg', { error: true })
                 let a = await image.write(outputpath)
-                
+
                 const imagename = outputpath.slice(8)
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             })
 
         })
@@ -437,15 +495,19 @@ router.post('/pngtojpegupload', async (req, res) => {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
 
-            if (err) { return res.render('extensions/pngtojpeg', { error: true } ) }
+            if (err) { return res.render('extensions/pngtojpeg', { error: true }) }
 
             outputpath = 'uploads/' + Date.now() + 'result.jpeg'
             jimp.read(req.file.path, async (err, image) => {
-                if (err) return res.render('extensions/pngtojpeg', { error: true } )
+                if (err) return res.render('extensions/pngtojpeg', { error: true })
                 let a = await image.write(outputpath)
-                
+
                 const imagename = outputpath.slice(8)
-                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                setTimeout(() => {
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
+                }, 5000);
             })
 
         })
