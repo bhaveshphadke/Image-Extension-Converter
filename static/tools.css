@@ -20,6 +20,11 @@
     padding: 20px;
     border: 0.5px solid rgb(58, 144, 179);
 }
+
+.extension-tools .extensions-div .each-tool:hover{
+    background-color: rgb(205, 205, 206);
+}
+
 .extension-tools .extensions-div .each-tool a{
     text-decoration: none;
     color: #0e1740;
