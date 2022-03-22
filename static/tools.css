@@ -12,13 +12,15 @@
 }
 .extension-tools .extensions-div{
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto;
     margin: 20px 20px;
 }
 
 .extension-tools .extensions-div .each-tool{
     padding: 20px;
     border: 0.5px solid rgb(58, 144, 179);
+    border-radius: 2px;
+    margin: 2px;
 }
 
 .extension-tools .extensions-div .each-tool:hover{
@@ -55,7 +57,7 @@
     }
   
   }
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 540px) {
     .extension-tools .extensions-div{
         grid-template-columns: auto auto auto;
        
@@ -66,7 +68,7 @@
     }
   
   }
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
     .extension-tools .extensions-div{
         grid-template-columns: auto auto ;
         
