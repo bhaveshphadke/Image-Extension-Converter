@@ -137,7 +137,7 @@ h1{
         top: 20px;
         right: 10px;
         border-radius: 4px;
-
+        
     }
     .ham div{
         width: 25px;
@@ -145,6 +145,7 @@ h1{
         margin: 5px;
         border-radius: 5px;
         background-color: black;
+        margin: 7px;
     }
     
     h1{
