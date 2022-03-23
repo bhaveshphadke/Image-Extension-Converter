@@ -136,11 +136,15 @@ h1{
         position: absolute;
         top: 20px;
         right: 10px;
+        border-radius: 4px;
+
     }
     .ham div{
         width: 25px;
         border: 1px solid black;
         margin: 5px;
+        border-radius: 5px;
+        background-color: black;
     }
     
     h1{
