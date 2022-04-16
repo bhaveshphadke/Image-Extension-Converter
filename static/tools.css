@@ -24,10 +24,10 @@
     text-align: center;
 }
 .extension-tools .extensions-div .each-tool:nth-child(odd){
-    background-image: linear-gradient(pink,violet);
+    background-image: linear-gradient(45deg,pink,violet);
 }
 .extension-tools .extensions-div .each-tool:nth-child(even){
-    background-image: linear-gradient(rgb(133, 186, 133),rgb(199, 199, 141));
+    background-image: linear-gradient(45deg,rgb(133, 186, 133),rgb(199, 199, 141));
 }
 
 .extension-tools .extensions-div .each-tool:hover{
