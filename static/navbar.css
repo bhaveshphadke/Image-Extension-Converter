@@ -1,6 +1,6 @@
 /* Navbar div  */
 .navbar-div{
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -131,6 +131,7 @@ h1{
         display: none;
     }
     .ham{
+        
         display: block;
         border: 1px solid black;
         position: absolute;

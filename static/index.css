@@ -16,9 +16,9 @@
 /* Home Container  */
 .home-container{
     width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
     margin: 50px  auto;
 }
 .home-container .home-desc{
@@ -38,7 +38,7 @@
     justify-content: center;
 }
 .home-container .image-container .img{
-    width: 60%;
+    width: 50%;
     border: 1px solid rgb(26, 24, 24);
     border-radius: 10px;
     box-shadow: 10px 10px 9px lightblue;
@@ -54,7 +54,7 @@
     padding: 5px;
     font-family: 'Baloo 2', cursive;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .btn:hover{
     background-color: rgb(33, 49, 59);

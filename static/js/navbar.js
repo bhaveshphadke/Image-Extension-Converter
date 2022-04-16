@@ -8,9 +8,14 @@ ham.addEventListener('click', () => {
     if (display === 'none') {
         mainurl.style.display = 'flex'
         searchdiv.style.display = 'flex'
+        // searchdiv.style.transition='top 1s ease-in-out'
     }
     else {
-        mainurl.style.display = 'none'
+        // setInterval(() => {
+            mainurl.style.display = 'none'
         searchdiv.style.display = 'none'
+        // }, 100);
+        // searchdiv.style.transition='top 1s ease-in-out'
+
     }
 })
