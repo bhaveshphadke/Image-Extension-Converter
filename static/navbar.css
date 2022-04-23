@@ -63,11 +63,9 @@ h1{
     padding: 5px;
     font-family: 'Baloo 2', cursive;
     cursor: pointer;
-    background-image: linear-gradient(45deg,#ff5bfc,white);
+    background-color: #fca5ff;
 }
-.main-urls .btn:hover{
-    background-image: linear-gradient(45deg,#ff98ff,white);
-}
+
 
 
 /* Navbar Login And Sign Up buttons  */
@@ -99,11 +97,7 @@ h1{
     border: 0.1 px solid rgb(65, 194, 211);
     padding: 5px;
     font-family: 'Baloo 2', cursive;
-    background-image: linear-gradient(45deg,#ff5bfc,white);
-}
-.search-div .btn:hover{
-    background-image: linear-gradient(45deg,#ff98ff,white);
-
+    background-color: #fca5ff;
 }
 
 
@@ -135,19 +129,19 @@ h1{
     .ham{
         
         display: block;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         position: absolute;
         top: 20px;
         right: 10px;
-        border-radius: 4px;
+        /* border-radius: 4px; */
         
     }
     .ham div{
         width: 25px;
-        border: 1px solid black;
+        border: 2px solid #fca5ff;
         margin: 5px;
         border-radius: 5px;
-        background-color: black;
+        background-color:#fca5ff;
         margin: 7px;
     }
     
@@ -156,4 +150,25 @@ h1{
         text-align: center;
     }
 
+  }
+
+  @media only screen and (min-width: 1400px) {
+    .navbar-div{
+        width: 80%;
+        margin: auto;
+    }
+  }
+
+  @media only screen and (min-width: 1800px) {
+    .navbar-div{
+        width: 70%;
+        margin: auto;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    .navbar-div{
+        width: 60%;
+        margin: auto;
+    }
   }
