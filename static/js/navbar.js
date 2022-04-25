@@ -39,8 +39,8 @@ let touchstartX = 0
 let touchendX = 0
 
 function handleGesture() {
-    if (touchendX < touchstartX){window.history.back()}
-    if (touchendX > touchstartX) {window.history.forward()}
+    if (touchendX < touchstartX){window.history.forward()}
+    if (touchendX > touchstartX) {window.history.back()}
   }
   
   document.addEventListener('touchstart', e => {
