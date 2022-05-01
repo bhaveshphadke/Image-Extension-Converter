@@ -39,6 +39,7 @@
 }
 .home-container .image-container .img{
     width: 98.7vw;
+    margin-top: -45px;
     /* position: fixed; */
 }
 

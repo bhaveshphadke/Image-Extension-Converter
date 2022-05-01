@@ -5,6 +5,14 @@
 }
 
 /* Extensions Converter */
+.image-container{
+    height: 500px;
+    background-size: cover;
+    background-image: url('images/tools.jpg');
+}
+
+.extension-tools{
+}
 .extension-heading{
     text-align: center;
     margin-top: 20px;
@@ -46,12 +54,21 @@
     .extension-tools .extensions-div{
         grid-template-columns: auto auto auto ;
     }
+     
+.image-container{
+    height: 400px;
+}
+
   
   }
 @media only screen and (max-width: 825px) {
     .extension-tools .extensions-div{
         grid-template-columns: auto auto;
     }
+ 
+.image-container{
+    height: 300px;
+}
 
   
   }
