@@ -38,10 +38,8 @@
     justify-content: center;
 }
 .home-container .image-container .img{
-    width: 60%;
-    border: 1px solid rgb(26, 24, 24);
-    border-radius: 10px;
-    box-shadow: 10px 10px 9px lightblue;
+    width: 98.7vw;
+    /* position: fixed; */
 }
 
 .btn{
@@ -73,12 +71,7 @@
     .home-container .home-desc p{
         text-align: center;
     }
-    .home-container .image-container .img{
-        width: 100%;
-        border: 1px solid rgb(26, 24, 24);
-        border-radius: 10px;
-        box-shadow: 10px 10px 9px lightblue;
-    }
+   
   }
 
   
