@@ -1,12 +1,18 @@
 const express = require('express')
 const hbs = require('hbs')
 const path = require('path')
+const cors = require('cors')
+
 const connecToMongo = require('./db.js')
 const dotenv = require('dotenv').config('./.env')
+
 const app = express()
-const cors = require('cors')
 const PORT = process.env.PORT || 8000
 connecToMongo()
+
+app.use(express.json())
+app.use(express.urlencoded());
+
 app.set('view engine','hbs')
 app.set('views','templates/views')
 hbs.registerPartials('templates/partials')

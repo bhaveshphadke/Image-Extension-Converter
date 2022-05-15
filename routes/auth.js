@@ -1,23 +1,70 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../models/Users.js')
-
+const User = require('../models/Users')
+const bcrypt = require('bcryptjs')
 // SIGNUP
-router.get('/signup',(req,res)=>{
-    res.send('Hello World!!')
+router.get('/signup', (req, res) => {
+    res.render('signup')
 })
 
-router.post('/signup',(req,res)=>{
-    res.send('Hello World!!')
+router.post('/signup', async (req, res) => {
+    try {
+
+        const { name, email, password } = req.body
+
+        let user = await User.findOne({ email: email })
+
+        if (user) {
+            return res.send("Email is already in use.....")
+        }
+
+        var salt = await bcrypt.genSaltSync(10);
+        var hash = await bcrypt.hashSync(password, salt);
+
+        user = await User.create({
+            name: name,
+            email: email,
+            password: hash
+        })
+        res.redirect('/auth/login')
+    } catch (error) {
+        return res.send(`<h2>ERROR 404</h2>`)
+    }
 })
 
 //LOGIN
-router.get('/login',(req,res)=>{
-    res.send('Hello World!!')
+router.get('/login', (req, res) => {
+    res.render('login')
 })
 
-router.post('/login',(req,res)=>{
-    res.send('Hello World!!')
+router.post('/login', async (req, res) => {
+
+
+    try {
+
+        const {email, password } = req.body
+        
+        let user = await User.findOne({ email: email })
+        
+        if (!user) {
+            return res.redirect('/austh/signup')
+
+        }
+        
+        
+        let checkPass = await bcrypt.compare(password, user.password); // true
+        console.log(checkPass);
+        if(!checkPass){
+            return res.redirect('/austh/signup')
+
+        }
+
+        res.redirect('/')
+    } catch (error) {
+        console.log(error);
+        return res.send(`<h2>ERROR 404</h2>`)
+    }
+
 })
 
 module.exports = router
