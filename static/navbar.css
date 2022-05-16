@@ -101,6 +101,14 @@ h1{
 }
 
 
+.hide{
+    display: none;
+}
+
+body{
+    background-color: #f2e8f1;
+}
+
 @media only screen and (max-width: 1100px) {
 
     .navbar-div{flex-direction: column;

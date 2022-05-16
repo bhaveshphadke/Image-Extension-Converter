@@ -2,9 +2,11 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/Users')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 // SIGNUP
 router.get('/signup', (req, res) => {
     res.render('signup')
+    console.log(process.env.JWT_SECRETE);
 })
 
 router.post('/signup', async (req, res) => {
@@ -41,25 +43,36 @@ router.post('/login', async (req, res) => {
 
 
     try {
+let isLoggedIn = false
+        const { email, password } = req.body
 
-        const {email, password } = req.body
-        
         let user = await User.findOne({ email: email })
-        
+
         if (!user) {
             return res.redirect('/austh/signup')
 
         }
-        
-        
+
+
         let checkPass = await bcrypt.compare(password, user.password); // true
         console.log(checkPass);
-        if(!checkPass){
+        if (!checkPass) {
             return res.redirect('/austh/signup')
 
         }
 
-        res.redirect('/')
+        let data = {
+            user: {
+                id: user.id
+            }
+        }
+        isLoggedIn = true
+
+        console.log(data);
+
+        var token = jwt.sign(data, process.env.JWT_SECRETE);
+        console.log(token);
+        res.json({ data ,isLoggedIn})
     } catch (error) {
         console.log(error);
         return res.send(`<h2>ERROR 404</h2>`)

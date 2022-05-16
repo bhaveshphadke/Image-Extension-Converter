@@ -8,17 +8,20 @@
         <li><a href="/tools">Tools</a></li>
         <li><a href="/#">Contact Us</a></li>
         <li><a href="/#">Blogs</a></li>
-        <input type="text" placeholder="Search a Tool">
+        {{!-- <input type="text" placeholder="Search a Tool">
         <button class="btn">
             Search
-        </button>
+        </button> --}}
     </div>
     <div class="search-div" id="search-div">
         <div>
-            <a href="/auth/login"><button class="btn">Login</button></a>
+            <a href="/auth/login"><button class="btn" id="isLoggedIn1">Login</button></a>
         </div>
         <div>
-            <a href="/auth/signup"><button class="btn">Sign Up</button></a>
+            <a href="/auth/signup"><button class="btn" id="isLoggedIn2">Sign Up</button></a>
+        </div>
+        <div>
+            <a><button class="btn" id="LoggedIn">Logout</button></a>
         </div>
     </div>
     <div class="ham" id="ham">

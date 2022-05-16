@@ -37,20 +37,21 @@
     align-items: center;
     justify-content: center; */
     margin-top: -50px;
+    margin-bottom: 40px;
     height: 500px;
     width: 100vw;
     background-image: url('images/homeimage.PNG');
     background-repeat: no-repeat;
     background-size: cover;
 }
-.home-container .image-container .img{
+/* .home-container .image-container .img{
     width: 98.7vw;
     margin-top: -45px;
     /* position: fixed; */
-}
+/* } */ 
 
 .btn{
-    margin: 0 10px;
+    margin: 0 30px;
     font-size: 1.2rem;
     border-radius: 5px;
     background-color: rgb(65, 194, 211);

@@ -32,4 +32,26 @@ document.addEventListener('keydown',(e)=>{
 })
 
 
+let loginbtn= document.getElementById('isLoggedIn1')
+let signupbtn= document.getElementById('isLoggedIn2')
+let logoutbtn= document.getElementById('LoggedIn')
 
+console.log(localStorage.getItem('login'));
+if(localStorage.getItem('login')){
+    logoutbtn.classList.remove('hide')
+    loginbtn.classList.add('hide')
+    signupbtn.classList.add('hide')
+}else{
+
+   
+        logoutbtn.classList.add('hide')
+        loginbtn.classList.remove('hide')
+        signupbtn.classList.remove('hide')
+}
+
+logoutbtn.addEventListener('click',()=>{
+  
+    localStorage.removeItem('login')
+   location.reload()
+    
+})

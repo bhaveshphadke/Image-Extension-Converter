@@ -21,7 +21,8 @@
         {{>navbar}}
     </section>
     <section class="login-form container my-3">
-        <form class="form-container" action="/auth/login" method="post">
+        {{!-- <form class="form-container" action="/auth/login" method="post"> --}}
+        <form class="form-container">
             
             <div class="input">
                 <label for="email">Email Address:</label>
@@ -31,7 +32,7 @@
                 <label for="password">Set Password:</label>
                 <input type="password" name="password" id="password" placeholder="Set Password" required>
             </div>
-            <button class="btn">Login</button>
+            <button class="btn" onclick="checkLogin()">Login</button>
         </form>
     </section>
     <section class="footer">
@@ -40,5 +41,5 @@
 
 
 </body>
-
+<script src="/js/login.js"></script>
 </html>
