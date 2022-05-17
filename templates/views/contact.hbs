@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/contact.css">
+
+</head>
+
+<body onload="OnLoad()">
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    <section class="alert">
+        {{#if success}}
+        <div class="alert-container success" id="alert-container">
+            <p>Hi, {{name}}.. Your Request has been sent.</p>
+            <p id="cross-btn">X</p>
+        </div>
+
+        {{/if}}
+    </section>
+    <section class="signup-form container my-3">
+        <form class="form-container" action="/contact" method="post">
+            <div class="input">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+            </div>
+            <div class="input">
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="input">
+                <label for="description">Description:</label>
+                {{!-- <input type="desc" name="description" id="description" placeholder="Add description" required>
+                --}}
+                <br>
+                <textarea name="description" for="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+            <button class="btn">Contact</button>
+        </form>
+    </section>
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+</body>
+<script src="/js/contact.js"></script>
+
+</html>
