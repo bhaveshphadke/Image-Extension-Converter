@@ -8,4 +8,5 @@ const connecToMongo=()=>{
     })    
 }
 
+
 module.exports = connecToMongo
