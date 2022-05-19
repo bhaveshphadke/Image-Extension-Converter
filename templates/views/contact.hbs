@@ -21,16 +21,15 @@
         {{>navbar}}
     </section>
     <section class="alert">
-        {{#if success}}
-        <div class="alert-container success" id="alert-container">
-            <p>Hi, {{name}}.. Your Request has been sent.</p>
-            <p id="cross-btn">X</p>
+
+        <div id="alertDiv">
+          
         </div>
 
-        {{/if}}
+
     </section>
     <section class="signup-form container my-3">
-        <form class="form-container" action="/contact" method="post">
+        <form class="form-container">
             <div class="input">
                 <label for="name">Your Name:</label>
                 <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
@@ -46,8 +45,9 @@
                 <br>
                 <textarea name="description" for="description" id="description" cols="30" rows="10"></textarea>
             </div>
-            <button class="btn">Contact</button>
+            <button class="btn" onclick="ContactAPI(event)">Contact</button>
         </form>
+        <button id="btn">btn</button>
     </section>
     <section class="footer">
         {{>footer}}

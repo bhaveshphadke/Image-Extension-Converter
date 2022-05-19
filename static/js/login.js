@@ -15,5 +15,6 @@ checkLogin=async()=>{
 
    if(json.isLoggedIn){
     localStorage.setItem('login',true)
+    window.location = '/'
    }
 }
