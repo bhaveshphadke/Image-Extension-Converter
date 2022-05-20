@@ -36,6 +36,7 @@ console.log('12');
         res.redirect('/auth/login')
     } catch (error) {
         console.log(error);
+        
         return res.send(`<h2>ERROR 404</h2>`)
     }
 })
