@@ -11,11 +11,11 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', async (req, res) => {
     try {
-console.log('1');
+        console.log('1');
         const { name, email, password } = req.body
 
-        let user = await User.findOne({ email: email })
         console.log('2');
+        let user = await User.findOne({ email: email })
 
         if (user) {
             return res.send("Email is already in use.....")
@@ -31,11 +31,11 @@ console.log('1');
             email: email,
             password: hash
         })
-console.log('5');
+        console.log('5');
 
         res.redirect('/auth/login')
     } catch (error) {
-        return res.send({error})
+        return res.send({ error })
     }
 })
 
@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
 
 
     try {
-let isLoggedIn = false
+        let isLoggedIn = false
         const { email, password } = req.body
 
         let user = await User.findOne({ email: email })
@@ -77,7 +77,7 @@ let isLoggedIn = false
 
         var token = jwt.sign(data, process.env.JWT_SECRETE);
         console.log(token);
-        res.json({ data ,isLoggedIn})
+        res.json({ data, isLoggedIn })
     } catch (error) {
         console.log(error);
         return res.send(`<h2>ERROR 404</h2>`)
