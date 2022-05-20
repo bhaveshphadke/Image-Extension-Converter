@@ -18,10 +18,11 @@ async function ContactAPI(e) {
     let email = await document.getElementById('email').value
     let description = await document.getElementById('description').value
     let alertDiv = document.getElementById('alertDiv')
+    let loading = document.getElementById('loading')
 
     
     
-    
+    loading.innerHTML = 'Loading....'
     
     const response = await fetch('contact', {
         method: 'POST',
@@ -45,5 +46,7 @@ async function ContactAPI(e) {
         </div>
         `
     }
+     
+    loading.innerHTML = '     <button class="btn" onclick="ContactAPI(event)">Contact</button>'
 
 }

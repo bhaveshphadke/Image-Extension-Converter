@@ -9,6 +9,7 @@ router.get('/contact', (req, res) => {
 
 router.post('/contact', async (req, res) => {
     try {
+
         console.log('fsdfs');
         let success = false
         const { name, email, description } = req.body
@@ -31,9 +32,9 @@ router.post('/contact', async (req, res) => {
         })
         const mailOptions = {
             from: 'bhaveshphadke5256@gmail.com',
-            to: 'bhaveshphadke6433@gmail.com',
+            to: email,
             subject: `Hi, ${name}`,
-            html: `<h4>Hello ${name}</h4><p>we are working on your email( ${description}).. Thanks for contacting us!</p>`
+            html: `<h4>Hello ${name}</h4><p>Thanks for contacting us....</p>`
         }
 
         let a = await transporter.sendMail(mailOptions, (error, data) => {
