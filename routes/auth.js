@@ -11,26 +11,31 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', async (req, res) => {
     try {
-
+console.log('1');
         const { name, email, password } = req.body
 
         let user = await User.findOne({ email: email })
+        console.log('2');
 
         if (user) {
             return res.send("Email is already in use.....")
         }
+        console.log('3');
 
         var salt = await bcrypt.genSaltSync(10);
         var hash = await bcrypt.hashSync(password, salt);
+        console.log('4');
 
         user = await User.create({
             name: name,
             email: email,
             password: hash
         })
+console.log('5');
+
         res.redirect('/auth/login')
     } catch (error) {
-        return res.send(`<h2>ERROR 404</h2>`)
+        return res.send({error})
     }
 })
 
