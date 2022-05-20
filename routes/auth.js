@@ -17,11 +17,11 @@ router.post('/signup', async (req, res) => {
         console.log('2');
         let user = await User.findOne({ email: email })
 
+        console.log('3');
         if (user) {
             return res.send("Email is already in use.....")
         }
-        console.log('3');
-
+console.log('12');
         var salt = await bcrypt.genSaltSync(10);
         var hash = await bcrypt.hashSync(password, salt);
         console.log('4');
