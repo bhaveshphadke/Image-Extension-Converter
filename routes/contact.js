@@ -31,7 +31,7 @@ router.post('/contact', async (req, res) => {
 
         })
         const mailOptions = {
-            from: 'bhaveshphadke5256@gmail.com',
+            from: 'bhaveshphadke7050@gmail.com',
             to: email,
             subject: `Hi, ${name}`,
             html: `<h4>Hello ${name}</h4><p>Thanks for contacting us....</p>`
