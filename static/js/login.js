@@ -1,5 +1,5 @@
 
-checkLogin=async()=>{
+checkLogin=async(e)=>{
     e.preventDefault();
     let email = await document.getElementById('email').value;
     let password = await document.getElementById('password').value;
