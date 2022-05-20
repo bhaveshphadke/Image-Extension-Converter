@@ -25,13 +25,13 @@ router.post('/contact', async (req, res) => {
         const transporter = await nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'bhaveshphadke5256@gmail.com',
+                user: 'bhaveshphadke30@gmail.com',
                 pass: process.env.EMAIL_SECRETE
             }
 
         })
         const mailOptions = {
-            from: 'bhaveshphadke7050@gmail.com',
+            from: 'bhaveshphadke30@gmail.com',
             to: email,
             subject: `Hi, ${name}`,
             html: `<h4>Hello ${name}</h4><p>Thanks for contacting us....</p>`
