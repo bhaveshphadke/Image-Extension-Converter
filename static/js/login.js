@@ -1,6 +1,6 @@
 
 checkLogin=async()=>{
-    // e.preventDefault();
+    e.preventDefault();
     let email = await document.getElementById('email').value;
     let password = await document.getElementById('password').value;
     console.log('1');
