@@ -49,16 +49,20 @@ router.post('/login', async (req, res) => {
 
 
     try {
+        console.log('1');
         let isLoggedIn = false
         const { email, password } = req.body
+        console.log('2');
 
         let user = await User.findOne({ email: email })
+        console.log('3');
 
         if (!user) {
             return res.redirect('/austh/signup')
 
         }
 
+        console.log('4');
 
         let checkPass = await bcrypt.compare(password, user.password); // true
         console.log(checkPass);
@@ -66,18 +70,24 @@ router.post('/login', async (req, res) => {
             return res.redirect('/austh/signup')
 
         }
+        console.log('5');
 
         let data = {
             user: {
                 id: user.id
             }
         }
+        console.log('6');
+
         isLoggedIn = true
 
         console.log(data);
+        console.log('7');
 
         var token = jwt.sign(data, process.env.JWT_SECRETE);
         console.log(token);
+        console.log('8');
+
         res.json({ data, isLoggedIn })
     } catch (error) {
         console.log(error);
