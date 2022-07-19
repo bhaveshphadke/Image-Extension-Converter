@@ -20,7 +20,7 @@ checkLogin=async(e)=>{
    if(json.isLoggedIn){
     console.log('4');
 
-    localStorage.setItem('login',json.token)
+    localStorage.setItem('login',true)
     window.location = '/'
    }
 }

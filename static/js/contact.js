@@ -4,7 +4,7 @@ function OnLoad() {
 
     let LoggedIn = localStorage.getItem('login')
     
-    console.log(LoggedIn.length());
+    console.log();
     if (LoggedIn) {
 // if(LoggedIn)
     } else {
