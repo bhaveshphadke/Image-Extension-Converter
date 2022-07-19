@@ -2,7 +2,7 @@ const ham = document.getElementById('ham')
 ham.addEventListener('click', () => {
 
     let mainurl = document.getElementById('main-urls')
-    let searchdiv = document.getElementById('search-div')
+    let searchdiv = document.getElementById('auth-div')
     style = window.getComputedStyle(mainurl)
     display = style.getPropertyValue('display');
     if (display === 'none') {

@@ -69,7 +69,7 @@ h1{
 
 
 /* Navbar Login And Sign Up buttons  */
-.search-div{
+.auth-div{
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -78,17 +78,17 @@ h1{
     height: 100%;
     margin-right: 20px;
 }
-.search-div a{
+.auth-div a{
     text-decoration: none;
     color: black;
     width: 100%;
     height: 100%;
 }
-.search-div a:hover{
+.auth-div a:hover{
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
-.search-div .btn{
+.auth-div .btn{
     margin: 0 10px;
     font-size: 1.2rem;
     border-radius: 5px;
@@ -129,7 +129,7 @@ body{
         margin-top: 10px;
     }
 
-    .search-div{
+    .auth-div{
         margin-top: 10px;
         justify-content: center;
         display: none;
@@ -158,6 +158,9 @@ body{
         text-align: center;
     }
 
+    .auth-div{
+        margin-left: 22px;
+    }
   }
 
   @media only screen and (min-width: 1400px) {

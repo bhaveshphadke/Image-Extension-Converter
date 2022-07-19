@@ -33,10 +33,14 @@ router.get('/tools/webptopng', (req, res) => {
     res.render('extensions/webptopng', { error: false })
 })
 
+
+
 router.post('/webptopngupload', async (req, res) => {
     try {
         // USING UPLOAD MIDDLEWARE
         upload(req, res, async (err) => {
+
+
 
             if (err) { return res.render('extensions/webptopng') }
 
@@ -45,7 +49,7 @@ router.post('/webptopngupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -55,7 +59,7 @@ router.post('/webptopngupload', async (req, res) => {
 
                 res.render('extensions/webptopng', { error: true })
             }
-            
+
 
         })
     } catch (error) {
@@ -83,9 +87,9 @@ router.post('/webptojpgupload', (req, res) => {
             const imagename = outputpath.slice(8)
             if (result === "") {
 
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
-              
-                
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+
+
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -120,7 +124,7 @@ router.post('/webptojpegupload', (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -154,7 +158,7 @@ router.post('/webptogifupload', (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -189,7 +193,7 @@ router.post('/pngtowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -225,7 +229,7 @@ router.post('/jpgtowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -262,7 +266,7 @@ router.post('/jpegtowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -299,7 +303,7 @@ router.post('/giftowebpupload', async (req, res) => {
 
             const imagename = outputpath.slice(8)
             if (result === "") {
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -337,7 +341,7 @@ router.post('/jpgtopngupload', async (req, res) => {
                 if (err) return res.render('extensions/jpgtopng', { error: true })
                 let a = await image.write(outputpath)
                 const imagename = outputpath.slice(8)
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -370,7 +374,7 @@ router.post('/jpegtopngupload', async (req, res) => {
                 if (err) return res.render('extensions/jpegtopng', { error: true })
                 let a = await image.write(outputpath)
                 const imagename = outputpath.slice(8)
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -404,7 +408,7 @@ router.post('/jpegtojpgupload', async (req, res) => {
                 if (err) return res.render('extensions/jpegtojpg', { error: true })
                 let a = await image.write(outputpath)
                 const imagename = outputpath.slice(8)
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -438,7 +442,7 @@ router.post('/jpgtojpegupload', async (req, res) => {
                 let a = await image.write(outputpath)
 
                 const imagename = outputpath.slice(8)
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -470,7 +474,7 @@ router.post('/pngtojpgupload', async (req, res) => {
                 let a = await image.write(outputpath)
 
                 const imagename = outputpath.slice(8)
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)
@@ -502,7 +506,7 @@ router.post('/pngtojpegupload', async (req, res) => {
                 let a = await image.write(outputpath)
 
                 const imagename = outputpath.slice(8)
-                 res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
+                res.render('extensions/download', { outputpath: outputpath, imagename: imagename })
                 setTimeout(() => {
                     fs.unlinkSync(req.file.path)
                     fs.unlinkSync(outputpath)

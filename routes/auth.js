@@ -88,7 +88,7 @@ router.post('/login', async (req, res) => {
         console.log(token);
         console.log('8');
 
-        res.json({ data, isLoggedIn })
+        res.json({ data, isLoggedIn,token })
     } catch (error) {
         console.log(error);
         return res.send(`<h2>ERROR 404</h2>`)

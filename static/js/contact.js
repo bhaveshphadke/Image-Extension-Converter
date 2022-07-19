@@ -3,9 +3,10 @@
 function OnLoad() {
 
     let LoggedIn = localStorage.getItem('login')
-    console.log(LoggedIn);
+    
+    console.log(LoggedIn.length());
     if (LoggedIn) {
-
+// if(LoggedIn)
     } else {
         window.location = '/auth/login'
     }
@@ -19,11 +20,16 @@ async function ContactAPI(e) {
     let description = await document.getElementById('description').value
     let alertDiv = document.getElementById('alertDiv')
     let loading = document.getElementById('loading')
+    let loadingBar = document.getElementById('loading-bar')
 
     
+    loadingBar.style.width = "10%"
+    if(name !=='' || email!== '' || description!==''){
+    }
+    loadingBar.style.width = "30%"
+
     
-    loading.innerHTML = 'Loading....'
-    
+    loadingBar.style.width = "75%"
     const response = await fetch('contact', {
         method: 'POST',
         headers: {
@@ -31,7 +37,10 @@ async function ContactAPI(e) {
         },
         body: JSON.stringify({ name: name, email: email, description: description })
     })
+
+    loadingBar.style.width = "95%"
     const json = await response.json()
+
     if (json.success) {
         alertDiv.innerHTML = `       <div class="alert-container success" id="alertDiv">
         <p>Hi, ${json.name}.. Your Request has been sent.</p>
@@ -47,6 +56,7 @@ async function ContactAPI(e) {
         `
     }
      
-    loading.innerHTML = '     <button class="btn" onclick="ContactAPI(event)">Contact</button>'
+    loadingBar.style.width = "0"
+
 
 }

@@ -68,3 +68,9 @@
     display: flex;
     width: 100%;
 }
+
+.loading-bar{
+    height:2px;
+    width: 0;
+    background-color: red;
+}

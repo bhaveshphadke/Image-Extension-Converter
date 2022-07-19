@@ -24,7 +24,7 @@ app.use('/',require(path.join(__dirname,'routes/videos')))
 app.use('/',require(path.join(__dirname,'routes/index')))
 app.use('/auth',require(path.join(__dirname,'routes/auth')))
 app.use('/',require(path.join(__dirname,'routes/contact')))
-app.use('/',require(path.join(__dirname,'routes/blog')))
+// app.use('/',require(path.join(__dirname,'routes/blog')))
 app.get('*',(req,res)=>{
     res.status(404).send('404 PAGE NOT FOUND')
 })
