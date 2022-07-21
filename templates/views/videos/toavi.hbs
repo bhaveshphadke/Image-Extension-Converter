@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP4 to MP3</title>
+    <title>AVI</title>
     <link rel="stylesheet" href="/css/videos.css">
     <link rel="stylesheet" href="/navbar.css">
     <link rel="stylesheet" href="/footer.css">
@@ -21,7 +21,7 @@
     </section>
     <section class="videos-upload-form">
         <div class="videos-form-div">
-            <h2 class="videos-heading">Extract Audio From <b>.MP4</b> To <b>.MP3</b></h2>
+            <h2 class="videos-heading">Convert Video From <b>Convert </b> To <b> AVI</b></h2>
             <div class="image-container">
                 <div class="from">
                     <img src="/images/mp4.PNG" alt="">
@@ -33,10 +33,11 @@
                     <img src="/images/mp3.PNG" alt="">
                 </div>
             </div>
-            <form action="/tomp3upload" method="POST" class="videos-form" enctype="multipart/form-data">
+            <form action="/upload" method="POST" class="videos-form" enctype="multipart/form-data">
                 <div class="image-div">
                     <label for="video">Upload an image</label>
-                    <input type="file" accept=".mp4" name="video" id="video" required>
+                    <input type="file" accept="" name="video" id="video" required>
+                    <input style="display: none" type="text" value="avi" name="format">
                 </div>
                 {{>fileerror}}
                 <div>

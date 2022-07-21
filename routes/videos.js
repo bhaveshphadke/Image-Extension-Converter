@@ -1,10 +1,7 @@
 const express = require('express')
 const multer = require('multer')
 const { exec } = require('child_process')
-const fs = require('fs')
 const router = express.Router()
-
-
 
 
 // DECLARING STORAGE VARIABLE TO STORE IMAGES ON THE SERVER
@@ -18,22 +15,44 @@ const storage = multer.diskStorage({
     }
 })
 
+
 // CREATING UPLOAD MIDDLEWARE
 const upload = multer({ storage: storage })
 
 
 
 
-// MP4 TO MP3
-router.get('/tools/mp4tomp3', (req, res) => {
-    res.render('videos/mp4tomp3', { error: false })
+
+// All Get Requests
+router.get('/tools/tomp4', (req, res) => {
+    res.render('videos/tomp4', { error: false })
+})
+router.get('/tools/towebm', (req, res) => {
+    res.render('videos/towebm', { error: false })
+})
+router.get('/tools/toavi', (req, res) => {
+    res.render('videos/toavi', { error: false })
+})
+router.get('/tools/tompeg', (req, res) => {
+    res.render('videos/tompeg', { error: false })
+})
+router.get('/tools/tomov', (req, res) => {
+    res.render('videos/tomov', { error: false })
+})
+router.get('/tools/tomkv', (req, res) => {
+    res.render('videos/tomkv', { error: false })
+})
+router.get('/tools/toflv', (req, res) => {
+    res.render('videos/toflv', { error: false })
 })
 
-router.post('/mp4tomp3upload', upload.single('video'), (req, res, next) => {
+// Common Post API
+router.post('/upload', upload.single('video'), (req, res, next) => {
     if (req.file) {
         // console.log(req.file.path)
-
-        var outputpath = 'uploads/' + Date.now() + "output.mp3"
+        const to = req.body.format
+        console.log(to);
+        var outputpath = 'uploads/' + Date.now() + `output.${to}`
 
         exec(`ffmpeg -i ${req.file.path} ${outputpath}`, (error, stdout, stderr) => {
             if (error) {
@@ -46,15 +65,14 @@ router.post('/mp4tomp3upload', upload.single('video'), (req, res, next) => {
 
                 res.render('videos/download', { outputpath: outputpath, videoname: videoname })
                 setTimeout(() => {
-                fs.unlinkSync(req.file.path)
-                fs.unlinkSync(outputpath)
+                    fs.unlinkSync(req.file.path)
+                    fs.unlinkSync(outputpath)
                 }, 43200000);
 
             }
         })
     }
 })
-
 
 // TO DOWNLOAD
 router.get('/download', (req, res) => {
@@ -69,5 +87,3 @@ router.get('/download', (req, res) => {
 })
 
 module.exports = router
-
-
