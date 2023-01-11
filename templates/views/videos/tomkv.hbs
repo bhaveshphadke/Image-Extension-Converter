@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKV</title>
+    <link rel="stylesheet" href="/css/videos.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/loader.css">
+<script defer src="/js/loader.js"></script>
+
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    <section class="videos-upload-form">
+        <div class="videos-form-div">
+            <h2 class="videos-heading">Convert Video From <b>Convert </b> To <b> MKV</b></h2>
+            <div class="image-container">
+                <div class="from">
+                    <img src="/images/Convert.PNG" alt="">
+                </div>
+                <div class="arrow">
+                    <img src="/images/rightarrow.png" alt="">
+                </div>
+                <div class="to">
+                    <img src="/images/MKV.PNG" alt="">
+                    {{!-- <img src="/images/MKV.PNG" alt=""> --}}
+                </div>
+            </div>
+            <form action="/upload" method="POST" class="videos-form" enctype="multipart/form-data">
+                <div class="image-div">
+                    <label for="video">Upload an image</label>
+                    <input type="file" accept="" name="video" id="video" required>
+                    <input style="display: none" type="text" value="mkv" name="format">
+                </div>
+                {{>fileerror}}
+                <div>
+                    <label for="btn"></label>
+                    <button class='btn' id="btn">Convert</button>
+                </div>
+            </form>
+                 <div class="loader" id="loader"></div>
+                    <div id="loader-text" style="font-size:1.2rem;">Converting Please wait.. it might take some time.</div>
+
+        </div>
+    </section>
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+
+</html>

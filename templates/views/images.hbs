@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Images</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    {{!-- {{each}} --}}
+    {{#each images}}
+    <div>
+        <img src={{this.img}} alt="img">
+        <p>{{this.img}}</p>
+        <a download={{this.img}} href="{{this.img}}">download</a>
+        
+    </div>
+    {{/each}}
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+
+</html>

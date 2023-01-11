@@ -1,0 +1,185 @@
+/* Navbar div  */
+.navbar-div{
+    /* border-bottom: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-heading h1{
+    color: #cf07c0;
+}
+
+
+
+
+h1{
+    font-family: 'Baloo 2', cursive;
+    margin-left: 5px;
+    /* width: max-content; */
+    width: 100%;
+    width: max-content;
+}
+
+/* Navbar urls div  */
+.main-urls{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Baloo 2', cursive;
+}
+
+
+.main-urls li{
+    list-style: none;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    width: max-content;
+}
+
+.main-urls li a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.main-urls input{
+    margin: 0 10px;
+    padding: 5px;
+    width: 200px;
+    font-size: 1.2rem;
+    font-family: 'Baloo 2', cursive;
+    outline:2px solid #fb08ff;
+    border: none;
+    border-radius: 2px;
+}
+.main-urls .btn{
+    margin: 0 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    color: black;
+    border: 0.1 px solid black;
+    padding: 5px;
+    font-family: 'Baloo 2', cursive;
+    cursor: pointer;
+    background-color: #fca5ff;
+}
+
+
+
+/* Navbar Login And Sign Up buttons  */
+.auth-div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    margin-right: 20px;
+}
+.auth-div a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+.auth-div a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.auth-div .btn{
+    margin: 0 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    border: 0.1 px solid rgb(65, 194, 211);
+    padding: 5px;
+    font-family: 'Baloo 2', cursive;
+    background-color: #fca5ff;
+}
+
+
+.hide{
+    display: none;
+}
+
+body{
+    background-color: #f2e8f1;
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .navbar-div{flex-direction: column;
+    }
+
+    .main-urls{
+        flex-direction: column;
+        display: none;
+    }
+    
+    
+.main-urls li{
+    margin: 2px;
+    padding: 2px;
+}
+
+    .main-urls .btn{
+        margin-top: 10px;
+    }
+
+    .auth-div{
+        margin-top: 10px;
+        justify-content: center;
+        display: none;
+    }
+    .ham{
+        
+        display: block;
+        /* border: 1px solid black; */
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        /* border-radius: 4px; */
+        
+    }
+    .ham div{
+        width: 25px;
+        border: 2px solid #fca5ff;
+        margin: 5px;
+        border-radius: 5px;
+        background-color:#fca5ff;
+        margin: 7px;
+    }
+    
+    h1{
+        margin: 20px;
+        text-align: center;
+    }
+
+    .auth-div{
+        margin-left: 22px;
+    }
+  }
+
+  @media only screen and (min-width: 1400px) {
+    .navbar-div{
+        width: 80%;
+        margin: auto;
+    }
+  }
+
+  @media only screen and (min-width: 1800px) {
+    .navbar-div{
+        width: 70%;
+        margin: auto;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    .navbar-div{
+        width: 60%;
+        margin: auto;
+    }
+  }

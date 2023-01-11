@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downlaod</title>
+    <link rel="stylesheet" href="/css/download.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    <section>
+        <div class="download-div">
+            <div class="file-name">
+                <p>File Name is : <b>{{videoname}}</b></p>
+                <p>Click Download Button to download image</p>
+            </div>
+            <form action="/video/download" method="GET" enctype="multipart/form-data">
+                <div>
+                    <input type="text" value={{outputpath}} style="display: none;" name="video" required>
+                    <input type="hidden" id="token" name="token" required>
+                    <img src={{outputpath}} alt="">
+                </div>
+                <div class="download-btn-div">
+                    <button class="btn-download">Download</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+<script>
+    const data = localStorage.getItem('token')
+const tokenElement = document.getElementById('token')
+tokenElement.value = data
+</script>
+</html>

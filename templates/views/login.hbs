@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    <section class="login-form container my-3">
+        {{!-- <form class="form-container" action="/auth/login" method="post"> --}}
+        <form class="form-container">
+            
+            <div class="input">
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="input">
+                <label for="password">Set Password:</label>
+                <input type="password" name="password" id="password" placeholder="Set Password" required>
+            </div>
+            <button class="btn" onclick="checkLogin(event)">Login</button>
+        </form>
+    </section>
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+
+</body>
+<script src="/js/login.js"></script>
+</html>

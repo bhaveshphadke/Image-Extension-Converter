@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCS</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/css/docs.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/contact.css">
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    <section class="docs">
+        {{>tutorial}}
+    </section>
+    <div style=" display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><button id="btn"
+            class="btn">Go to
+            Comment</button></div>
+    <section class="comment" id="comment">
+        {{>comment}}
+        <button id="show" onclick="fetchallcomments()">Show all comments</button>
+        <button id="hide" onclick="hideallcomments()">Hide all comments</button>
+        <div id="comment-div" class="comments">
+        </div>
+    </section>
+
+    <section class="signup-form container my-3" id="form">
+        <h2 style="text-align: center;" class="contact-me">Contact Me</h2>
+        <div class="alert">
+            <div id="alertDiv">
+            </div>
+        </div>
+        <form class="form-container">
+            <div class="input">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+            </div>
+            <div class="input">
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="input">
+                <label for="description">Description:</label>
+
+                <br>
+                <textarea name="description" for="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+            <div id="loading" class="loading">
+                <button class="btn" onclick="ContactAPI(event)">Contact Me</button>
+            </div>
+
+        </form>
+    </section>
+
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+<script src="/js/docs.js"></script>
+<script src="/js/contact.js"></script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downlaod</title>
+    <link rel="stylesheet" href="/css/download.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    <section>
+        <div class="download-div">
+            <div class="file-name">
+                <p>File Name is : <b>{{imagename}}</b></p>
+                <p>Click Download Button to download image</p>
+            </div>
+            <form action="/download" method="GET" enctype="multipart/form-data">
+                <div>
+                    <input type="text" value={{outputpath}} style="display: none;" name="downloadimage" required>
+                    <input type="text" id="token" style="display: none;" name="token" >
+
+                </div>
+                <div>
+                    <img style="margin: auto; display: block;" src={{outputpath}} alt="image">
+
+                </div>
+                <div class="download-btn-div">
+                    <button class="btn-download">Download</button>
+                    <div><a id="goback" style="color:blue;text-decoration: underline;cursor: pointer;">convert again</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+<script>
+const data = localStorage.getItem('token')
+const tokenElement = document.getElementById('token')
+tokenElement.value = data
+
+let goback = document.getElementById('goback')
+goback.addEventListener('click',()=>{
+    window.history.back()
+})
+
+
+</script>
+
+</html>

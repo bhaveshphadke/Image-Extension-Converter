@@ -1,0 +1,74 @@
+
+form{
+    text-align: center;
+}
+form input{
+    /* margin: 10px; */
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+}
+form button{
+    /* margin: 10px; */
+    padding: 10px;
+    border-radius:  0 10px 10px 0;
+}
+
+.comments{
+    margin: 20px;
+}
+
+.comment-item{
+    text-align: center;
+    margin: 10px auto;
+    display: flex;
+    width: 20rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: #a69090;
+    align-items: center;
+    /* justify-content: center; */
+}
+.comment-item div{
+    margin: 10px;
+}
+.comment{
+   display: none;
+}
+.contact-me{
+    text-align: center;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#btn{
+    text-align: center;
+}
+
+.profile{
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 2rem;
+}
+
+.cmt{
+    font-size: 1.2rem;
+    overflow-wrap: anywhere;
+}
+#hide, #show{
+    background: #b9a461;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+@media screen and (max-width: 380px) {
+    .comment-item{
+        width: 15rem;
+    }
+  }

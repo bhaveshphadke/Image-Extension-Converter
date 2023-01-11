@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=IBM+Plex+Serif:wght@500&family=Luxurious+Roman&family=Montserrat:wght@100;300&family=Open+Sans:wght@500&family=Rubik&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Extensions Converter */
+.image-container-tools{
+    height: 500px;
+    background-size: cover;
+    background-image: url('images/tools.jpg');
+    margin-top: -25px;
+}
+
+.extension-tools{
+}
+.extension-heading{
+    text-align: center;
+    margin-top: 20px;
+    color: #ca17d0;
+}
+.extensions-div{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 20px 20px;
+}
+
+.extension-tools .extensions-div .each-tool{
+    padding: 20px;
+    border: 0.5px solid rgb(58, 144, 179);
+    border-radius: 2px;
+    margin: 5px;
+    text-align: center;
+}
+.extension-tools .extensions-div .each-tool:nth-child(odd){
+    background-image: linear-gradient(45deg,pink,violet);
+}
+.extension-tools .extensions-div .each-tool:nth-child(even){
+    background-image: linear-gradient(45deg,rgb(133, 186, 133),rgb(199, 199, 141));
+}
+
+ .extensions-div .each-tool:hover{
+    background-color: rgb(205, 205, 206);
+}
+
+ .extensions-div .each-tool a{
+    text-decoration: none;
+    color: blue;
+}
+
+
+
+
+@media only screen and (max-width: 1260px) {
+     .extensions-div{
+        grid-template-columns: auto auto auto ;
+    }
+     
+.image-container{
+    height: 400px;
+}
+
+  
+  }
+@media only screen and (max-width: 825px) {
+    .extensions-div{
+        grid-template-columns: auto auto;
+    }
+ 
+.image-container{
+    height: 300px;
+}
+
+  
+  }
+
+@media only screen and (max-width: 550px) {
+     .extensions-div{
+        grid-template-columns: auto  ;
+        
+    }
+    
+    
+
+}

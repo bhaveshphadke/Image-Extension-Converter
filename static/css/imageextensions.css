@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=IBM+Plex+Serif:wght@500&family=Luxurious+Roman&family=Montserrat:wght@100;300&family=Open+Sans:wght@500&family=Rubik&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+}
+
+.webptopng-form-div{
+    margin: 50px;
+}
+
+.webptopng-heading{
+    text-align: center;
+    margin: 10px;
+        color: #ca17d0;
+}
+
+.image-container{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin: 25px;
+}
+.image-container div{
+    margin: 5px 50px;
+}
+.image-container div img{
+    width: 100px;
+}
+
+.webptopng-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.webptopng-form div{
+    margin: 10px;
+}
+
+.image-div{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+
+.image-div label{
+    margin: 5px;
+    font-size: 1.2rem;
+}
+
+.image-div input{
+    margin: 5px;
+    /* padding: 1-; */
+}
+.image-div input[type=file]::file-selector-button{
+    margin: 5px;
+    padding: 10px;
+    background-color: rgb(64, 189, 206);
+    border-radius: 5px;
+}
+
+.btn{
+    padding: 10px;
+    background-color: rgb(115, 196, 115);
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .image-div{
+        flex-direction: column;
+    }
+
+    .image-container div img{
+        width: 50px;
+    }
+    .image-container{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        margin: 25px;
+    }
+    .image-container div{
+        margin: 5px 25px;
+    }
+
+  }

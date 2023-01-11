@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPG-TO-JPEG</title>
+    <link rel="stylesheet" href="/css/imageextensions.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/loader.css">
+<script defer src="/js/loader.js"></script>
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+   
+
+    <section class="webptopng-upload-form">
+        <div class="webptopng-form-div">
+            <h2 class="webptopng-heading">Convert Image From <b>.JPG</b> To <b>.JPEG</b></h2>
+            <div class="image-container">
+                <div class="from">
+                    <img src="/images/jpg.PNG" alt="">
+                </div>
+                <div class="arrow">
+                    <img src="/images/rightarrow.png" alt="">
+                </div>
+                <div class="to">
+                    <img src="/images/jpeg.PNG" alt="">
+                </div>
+            </div>
+            <form action="/imageupload" onsubmit="load()" method="POST" class="webptopng-form" enctype="multipart/form-data">
+                <div class="image-div">
+                    <label for="image">Upload an image</label>
+                    <input type="file" accept=".jpg" name="image" id="image" required>
+                    <input type="hidden" name="from" value="jpg">
+                     <input type="hidden" name="to" value="jpeg">
+                </div>
+                {{>fileerror}}
+                <div>
+                    <label for="btn"></label>
+                    <button class='btn' id="btn">Convert</button>
+                </div>
+            </form>
+            <div class="loader" id="loader"></div>
+                    <div id="loader-text" style="font-size:1.2rem;">Converting Please wait.. it might take some time.</div>
+
+        </div>
+    </section>
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+
+</html>

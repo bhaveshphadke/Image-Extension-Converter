@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=IBM+Plex+Serif:wght@500&family=Luxurious+Roman&family=Montserrat:wght@100;300&family=Open+Sans:wght@500&family=Rubik&display=swap');
+*{
+    padding: 0;
+    margin:0;
+}
+
+/* Main Heading  */
+.main-heading h2{
+    text-align: center;
+    font-family: 'Baloo 2', cursive;
+    margin-top: 20px;
+    color: #cf07c0;
+    
+}
+
+/* Home Container  */
+.home-container{
+    /* width: 90%; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: 50px  auto;
+}
+.home-container .home-desc{
+    font-family: 'Baloo 2', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-container .home-desc h3{
+    color: #cf07c0;
+    text-align: center;
+}
+
+.home-container .image-container{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-top: -50px;
+    margin-bottom: 40px;
+    height: 500px;
+    width: 100vw;
+    background-image: url('images/homeimage.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* .home-container .image-container .img{
+    width: 98.7vw;
+    margin-top: -45px;
+    /* position: fixed; */
+/* } */ 
+
+.btn{
+    margin: 0 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: rgb(65, 194, 211);
+    color: black;
+    border: 0.1 px solid black;
+    padding: 5px;
+    font-family: 'Baloo 2', cursive;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #fca5ff;
+    
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .home-container{
+       flex-direction: column;
+    }
+    .home-container .home-desc{
+        margin: 20px;
+    }
+    .home-container .home-desc h3{
+        text-align: center;
+    }
+    .home-container .home-desc p{
+        text-align: center;
+    }
+
+  
+.home-container .image-container{
+    height: 350px;
+}
+   
+  }
+
+  
+
+  

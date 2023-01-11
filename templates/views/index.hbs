@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME - TOOLS</title>
+    <link rel="stylesheet" href="/util.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <section class="navbar">
+        {{>navbar}}
+    </section>
+    <section class="extension-tools" id="extension-converter">
+        <div class="image-container-tools">
+
+        </div>
+        <div class="image-extensions">
+            <h2 class="extension-heading">Image Extension converter</h2>
+            <div class="extensions-div">
+                <div class="each-tool">
+                    <a href="/tools/jpgtopng" onclick="save('/tools/jpgtopng')" class="tool"><b>JPG</b> TO
+                        <b>PNG</b></a>
+
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/jpegtopng" onclick="save('/tools/jpegtopng')" class="tool"><b>JPEG</b> TO
+                        <b>PNG</b></a>
+
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/jpegtojpg" onclick="save('/tools/jpegtojpg')" class="tool"><b>JPEG</b> TO
+                        <b>JPG</b></a>
+
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/jpgtojpeg" onclick="save('/tools/jpgtojpeg')" class="tool"><b>JPG</b> TO
+                        <b>JPEG</b></a>
+
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/pngtojpg" onclick="save('/tools/pngtojpg')" class="tool"><b>PNG</b> TO
+                        <b>JPG</b></a>
+
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/pngtojpeg" onclick="save('/tools/webptopng')" class="tool"><b>PNG</b> TO
+                        <b>JPEG</b></a>
+
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/webptopng" onclick="save('/tools/webptopng', 'webp', 'png')"
+                        class="tool"><b>WEBP</b> TO <b>PNG</b></a>
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/webptojpg" onclick="save('/tools/webptojpg')" class="tool"><b>WEBP</b> TO
+                        <b>JPG</b></a>
+                </div>
+                <div class="each-tool">
+                    <a href="/tools/webptojpeg" onclick="save('/tools/webptojpeg')" class="tool"><b>WEBP</b> TO
+                        <b>JPEG</b></a>
+                </div>
+
+                <div class="each-tool">
+                    <a href="/tools/towebp" onclick="save('/tools/webptopng')" class="tool"><b>Convert</b> TO
+                        <b>WEBP</b></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="video-audio-extensions">
+            <h2 class="extension-heading">Video Extension Converter</h2>
+            <div class="extensions-div">
+
+
+                <div class="each-tool">
+                    <a href="/tools/tomp4" class="tool"><b>Convert</b> TO <b>MP4</b></a>
+                </div>
+
+                <div class="each-tool">
+                    <a href="/tools/towebm" class="tool"><b>Convert</b> TO <b>WEBM</b></a>
+                </div>
+
+                <div class="each-tool">
+                    <a href="/tools/toavi" class="tool"><b>Convert</b> TO <b>AVI</b></a>
+                </div>
+                {{!-- <div class="each-tool">
+                    <a href="/tools/tompeg" class="tool"><b>Convert</b> TO <b>MPEG</b></a>
+                </div> --}}
+                <div class="each-tool">
+                    <a href="/tools/tomov" class="tool"><b>Convert</b> TO <b>MOV</b></a>
+                </div>
+
+                <div class="each-tool">
+                    <a href="/tools/tomkv" class="tool"><b>Convert</b> TO <b>MKV</b></a>
+                </div>
+
+                {{!-- <div class="each-tool">
+                    <a href="/tools/toflv" class="tool"><b>Convert</b> TO <b>FLV</b></a>
+                </div> --}}
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="footer">
+        {{>footer}}
+    </section>
+
+
+</body>
+{{!--
+<script src="js/tools.js"></script> --}}
+
+</html>

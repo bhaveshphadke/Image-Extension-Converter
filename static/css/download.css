@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=IBM+Plex+Serif:wght@500&family=Luxurious+Roman&family=Montserrat:wght@100;300&family=Open+Sans:wght@500&family=Rubik&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Baloo 2', cursive;
+}
+
+.file-name{
+    margin: 20px 0;
+}
+
+.file-name p{
+    text-align: center;
+}
+.download-btn-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.download-btn-div .btn-download{
+   padding: 10px;
+   background-color: rgb(86, 182, 86);
+   font-size: 1.5rem;
+}
+
+img{
+    width: 80%;
+}
